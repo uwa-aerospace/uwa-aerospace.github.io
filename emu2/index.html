@@ -5,23 +5,6 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/base-min.css"
   />
-  <script>
-    // https://stackoverflow.com/a/53218452
-    (async () => {
-      const response = await fetch(
-        "https://api.github.com/repos/uwa-aerospace/uwa-aerospace.github.io/contents/emu2/bom/"
-      );
-      const data = await response.json();
-      let htmlString = "<ul>";
-
-      for (let file of data) {
-        htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
-      }
-
-      htmlString += "</ul>";
-      document.getElementById("listing").innerHTML = htmlString;
-    })();
-  </script>
 </head>
 
 <body style="margin: 1em">
@@ -30,4 +13,10 @@
   <p>This is a list of bill of materials used by the avionics team for EMU2.</p>
 
   <div id="listing"></div>
+
+  <ul>
+    <li><a href="bom/Flight computer.xlsx">Flight computer.xlsx</a></li>
+    <li><a href="bom/GPS Module.xlsx">GPS Module.xlsx</a></li>
+    <li><a href="bom/Power Distribution.xlsx">Power Distribution.xlsx</a></li>
+  </ul>
 </body>
